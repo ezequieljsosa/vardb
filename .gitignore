@@ -107,3 +107,4 @@ ENV/
 
 doc/vardb.mwb.bak
 *.iml
+.pytest_cache

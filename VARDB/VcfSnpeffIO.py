@@ -9,8 +9,8 @@ hgvs.parser is used to parse http://varnomen.hgvs.org/
 
 import logging
 
-import vcf
 import hgvs.parser
+import vcf
 
 _log = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ class SnpeffEffect():
 
     def __str__(self):
         return "Snpeff(%s; %s; %s; %s;)" % (
-        self.geneid, str(self.annotation), str(self.hgvs_c), str(self.hgvs_p) if self.hgvs_p else "")
+            self.geneid, str(self.annotation), str(self.hgvs_c), str(self.hgvs_p) if self.hgvs_p else "")
 
     def __repr__(self):
         return self.__str__()

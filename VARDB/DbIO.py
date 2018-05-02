@@ -7,6 +7,7 @@ Created on Jun 22, 2017
 import vcf
 import subprocess
 from tqdm import tqdm
+
 from VARDB.VariantCollection import VariantCollection
 from VARDB.VcfSnpeffIO import VcfSnpeffIO
 from VARDB.Variant import Variant
@@ -14,14 +15,12 @@ from VARDB.Allele import Allele
 from VARDB.Effect import Effect
 from VARDB.VariantAssignment import VariantAssignment
 from VARDB.VariantAnnotation import VariantAnnotation
-from VARDB import sqldb, connect_to_db
-
+from VARDB import sqldb
 from VARDB.Alignment import Alignment
 from VARDB.AlignmentParam import AlignmentParam
 from VARDB.AlnLine import AlnLine
 from VARDB.ProgramRun import ProgramRun
 from VARDB.ProgramParameter import ProgramParameter
-from peewee import fn
 
 
 class VariantCollectionExistsError(Exception):
@@ -60,6 +59,7 @@ class DbIO(object):
               ProgramRun, ProgramParameter, Alignment, AlnLine, AlignmentParam]
 
     def create_db(self):
+
         # sqldb.execute_sql('DROP DATABASE ' + sqldb.database + ";")
         # sqldb.execute_sql('CREATE DATABASE ' + sqldb.database + ";")
 
