@@ -106,3 +106,4 @@ ENV/
 .settings/
 
 doc/vardb.mwb.bak
+*.iml

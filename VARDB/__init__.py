@@ -1,7 +1,5 @@
 from peewee import MySQLDatabase, Model
-
 from peewee import Proxy
-from playhouse.shortcuts import RetryOperationalError
 import json
 
 
@@ -25,12 +23,12 @@ class VARDBBase(Model):
 sqldb =  Proxy() 
 
 def connect_to_db(database='vardb',user='root',password='',engine=MySQLDatabase):
-    class MyRetryDB(RetryOperationalError, engine):
-        pass
-    from VARDB.Effect import Effect
-    from VARDB.Allele import DeferredEffect
-    DeferredEffect.set_model(Effect)
-    mysqldb = MyRetryDB(database, user=user, password=password)
+
+    #from VARDB.Effect import Effect
+    #from VARDB.Allele import DeferredEffect
+    #DeferredEffect.set_model(Effect)
+    mysqldb = engine(database=database, user=user, password=password)
     sqldb.initialize(mysqldb)
+
     
     
