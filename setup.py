@@ -38,7 +38,7 @@ setup(
     license='MIT License',
     author='German Burguener, Ezequiel Sosa',
     tests_require=['pytest'],
-    install_requires=['peewee>=3.1.1', 'tqdm', 'hgvs==1.1', 'configparser'],
+    install_requires=['peewee>=3.1.1', 'tqdm', 'hgvs==1.1', 'configparser','MySQL-python==1.2.3'],
     cmdclass={'test': PyTest},
     author_email='germanburguener@gmail.com,ezequieljsosa@gmail.com',
     description='Variant analysis toolkit',
@@ -56,6 +56,6 @@ setup(
     ],
     extras_require={
         'testing': ['pytest'],
-        'web': ['bottle>=0.12.13', 'gevent>=1.2.1', 'Beaker>=1.8.1']
+        'web': ['bottle>=0.12.13', 'gevent>=1.3a2', 'Beaker>=1.9']
     }
 )
